@@ -1,4 +1,4 @@
-@include('_frontend.layouts.header')
+@include('layouts.header')
 
 <body>
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
@@ -45,4 +45,4 @@
         </div>
     </div>
 
-    @include('_frontend.layouts.footer')
+    @include('layouts.footer')

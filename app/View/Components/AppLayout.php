@@ -13,6 +13,6 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('_frontend.layouts.main_content');
+        return view('layouts.main_content');
     }
 }
