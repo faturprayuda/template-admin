@@ -109,15 +109,15 @@
                         aria-label="submenu">
                         <li class="flex">
                             <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                href="#">
+                                href="/user/profile">
                                 <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none" stroke-linecap="round"
                                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                     <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
                                     </path>
                                 </svg>
-                                <a href="{{ route('profile.show') }}">
+                                <span>
                                     {{ __('Profile') }}
-                                </a>
+                                </span>
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <span href="{{ route('api-tokens.index') }}">
