@@ -3,7 +3,30 @@
 <body style="display: none">
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
         <!-- Desktop sidebar -->
-        <livewire:side-navigation />
+        <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
+            <div class="py-4 text-gray-500 dark:text-gray-400">
+                <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
+                    Windmill
+                </a>
+                <ul class="mt-6">
+                    <livewire:nav-side-comp active=true icon="fas fa-home" anchor="{{route('dashboard')}}"
+                        nameSideBar="Dashboard" />
+                    <livewire:nav-side-comp icon="fas fa-clipboard-list" nameSideBar="Forms" />
+                    <livewire:nav-side-comp icon="fas fa-th" nameSideBar="Cards" />
+                    <livewire:nav-side-comp icon="fas fa-chart-pie" nameSideBar="Charts" />
+                    <livewire:nav-side-comp icon="fas fa-mouse-pointer" nameSideBar="Buttons" />
+                    <livewire:nav-side-comp icon="far fa-clone" nameSideBar="Modals" />
+                    <livewire:nav-side-comp icon="fas fa-table" nameSideBar="Tables" />
+                </ul>
+                <div class="px-6 my-6">
+                    <button
+                        class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                        Create account
+                        <span class="ml-2" aria-hidden="true">+</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
         <!-- Mobile sidebar -->
         <!-- Backdrop -->
         <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
@@ -22,7 +45,14 @@
                     Windmill
                 </a>
                 <ul class="mt-6">
-                    <livewire:nav-side-mobile-comp />
+                    <livewire:nav-side-mobile-comp active=true icon="fas fa-home" anchor="{{route('dashboard')}}"
+                        nameSideBar="Dashboard" />
+                    <livewire:nav-side-mobile-comp icon="fas fa-clipboard-list" nameSideBar="Forms" />
+                    <livewire:nav-side-mobile-comp icon="fas fa-th" nameSideBar="Cards" />
+                    <livewire:nav-side-mobile-comp icon="fas fa-chart-pie" nameSideBar="Charts" />
+                    <livewire:nav-side-mobile-comp icon="fas fa-mouse-pointer" nameSideBar="Buttons" />
+                    <livewire:nav-side-mobile-comp icon="far fa-clone" nameSideBar="Modals" />
+                    <livewire:nav-side-mobile-comp icon="fas fa-table" nameSideBar="Tables" />
                 </ul>
                 <div class="px-6 my-6">
                     <button

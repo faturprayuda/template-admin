@@ -8,6 +8,8 @@
 
 @livewireScripts
 
+@yield('script')
+
 </body>
 
 </html>

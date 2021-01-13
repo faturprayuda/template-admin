@@ -11,6 +11,9 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+    {{-- FontAwesome --}}
+    <link rel="stylesheet" href="{{ asset('/assets/font_awesome/css/all.css') }}">
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
@@ -29,4 +32,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <script src="{{asset('/assets/js/charts-lines.js')}}" defer></script>
     <script src="{{asset('/assets/js/charts-pie.js')}}" defer></script>
+
+    @yield('style')
 </head>

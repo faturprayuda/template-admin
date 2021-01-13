@@ -1,18 +1,4 @@
 <x-app-layout>
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Ini Tampilan Baru') }}
-    </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
-        </div>
-    </div> --}}
-
     <div class="container px-6 mx-auto grid">
         <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
             Dashboard
@@ -32,7 +18,18 @@
         </a>
         <!-- Cards -->
         <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-            <livewire:card-comp />
+            <livewire:card-comp
+                bgIcon="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500"
+                icon="fas fa-users" title="Total clients" value="6389" />
+            <livewire:card-comp
+                bgIcon="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500"
+                icon="fas fa-money-bill-wave" title="Account balance" value="$ 46,760.89" />
+            <livewire:card-comp
+                bgIcon="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500"
+                icon="fas fa-shopping-cart" title="New sales" value="376" />
+            <livewire:card-comp
+                bgIcon="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500"
+                icon="fas fa-comment-dots" title="Pending contacts" value="35" />
         </div>
 
         <!-- New Table -->
