@@ -4,8 +4,6 @@
     <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
         <div class="{{ $bgIcon }}">
             <svg class="w-5 h-5 -mt-6" fill="currentColor" viewBox="0 0 20 20">
-                {{-- <path d="{{ $icon }}">
-                </path> --}}
                 <i class="{{ $icon }}"></i>
             </svg>
         </div>
