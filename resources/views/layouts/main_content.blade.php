@@ -9,14 +9,58 @@
                     Windmill
                 </a>
                 <ul class="mt-6">
-                    <livewire:nav-side-comp active=true icon="fas fa-home" anchor="{{route('dashboard')}}"
+                    <livewire:nav-side-comp path="dashboard" icon="fas fa-home" anchor="{{route('dashboard')}}"
                         nameSideBar="Dashboard" />
-                    <livewire:nav-side-comp icon="fas fa-clipboard-list" nameSideBar="Forms" />
-                    <livewire:nav-side-comp icon="fas fa-th" nameSideBar="Cards" />
-                    <livewire:nav-side-comp icon="fas fa-chart-pie" nameSideBar="Charts" />
-                    <livewire:nav-side-comp icon="fas fa-mouse-pointer" nameSideBar="Buttons" />
-                    <livewire:nav-side-comp icon="far fa-clone" nameSideBar="Modals" />
-                    <livewire:nav-side-comp icon="fas fa-table" nameSideBar="Tables" />
+                    <livewire:nav-side-comp path="form" icon="fas fa-clipboard-list" anchor="{{route('form')}}"
+                        nameSideBar="Forms" />
+                    <livewire:nav-side-comp path="card" icon="fas fa-th" anchor="{{route('card')}}"
+                        nameSideBar="Cards" />
+                    <livewire:nav-side-comp path="chart" icon="fas fa-chart-pie" anchor="{{route('chart')}}"
+                        nameSideBar="Charts" />
+                    <livewire:nav-side-comp path="button" icon="fas fa-mouse-pointer" anchor="{{route('button')}}"
+                        nameSideBar="Buttons" />
+                    <livewire:nav-side-comp path="modal" icon="far fa-clone" anchor="{{route('modal')}}"
+                        nameSideBar="Modals" />
+                    <livewire:nav-side-comp path="table" icon="fas fa-table" anchor="{{route('table')}}"
+                        nameSideBar="Tables" />
+                    {{-- dropdown menu --}}
+                    <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenu" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                    <i class="fas fa-columns"></i>
+                                </svg>
+                                <span class="ml-4">Pages</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <livewire:child-drop-side-bar-comp anchor="{{route('login-template')}}"
+                                    subName="Login" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('regist-template')}}"
+                                    subName="Create account" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('forgot-password-template')}}"
+                                    subName="Forgot password" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('not-found')}}" subName="404" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('blank')}}" subName="Blank" />
+                            </ul>
+                        </template>
+                    </li>
                 </ul>
                 <div class="px-6 my-6">
                     <button
@@ -45,14 +89,58 @@
                     Windmill
                 </a>
                 <ul class="mt-6">
-                    <livewire:nav-side-mobile-comp active=true icon="fas fa-home" anchor="{{route('dashboard')}}"
+                    <livewire:nav-side-comp path="dashboard" icon="fas fa-home" anchor="{{route('dashboard')}}"
                         nameSideBar="Dashboard" />
-                    <livewire:nav-side-mobile-comp icon="fas fa-clipboard-list" nameSideBar="Forms" />
-                    <livewire:nav-side-mobile-comp icon="fas fa-th" nameSideBar="Cards" />
-                    <livewire:nav-side-mobile-comp icon="fas fa-chart-pie" nameSideBar="Charts" />
-                    <livewire:nav-side-mobile-comp icon="fas fa-mouse-pointer" nameSideBar="Buttons" />
-                    <livewire:nav-side-mobile-comp icon="far fa-clone" nameSideBar="Modals" />
-                    <livewire:nav-side-mobile-comp icon="fas fa-table" nameSideBar="Tables" />
+                    <livewire:nav-side-comp path="form" icon="fas fa-clipboard-list" anchor="{{route('form')}}"
+                        nameSideBar="Forms" />
+                    <livewire:nav-side-comp path="card" icon="fas fa-th" anchor="{{route('card')}}"
+                        nameSideBar="Cards" />
+                    <livewire:nav-side-comp path="chart" icon="fas fa-chart-pie" anchor="{{route('chart')}}"
+                        nameSideBar="Charts" />
+                    <livewire:nav-side-comp path="button" icon="fas fa-mouse-pointer" anchor="{{route('button')}}"
+                        nameSideBar="Buttons" />
+                    <livewire:nav-side-comp path="modal" icon="far fa-clone" anchor="{{route('modal')}}"
+                        nameSideBar="Modals" />
+                    <livewire:nav-side-comp path="table" icon="fas fa-table" anchor="{{route('table')}}"
+                        nameSideBar="Tables" />
+                    {{-- dropdown menu --}}
+                    <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenu" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                    <i class="fas fa-columns"></i>
+                                </svg>
+                                <span class="ml-4">Pages</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <livewire:child-drop-side-bar-comp anchor="{{route('login-template')}}"
+                                    subName="Login" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('regist-template')}}"
+                                    subName="Create account" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('forgot-password-template')}}"
+                                    subName="Forgot password" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('not-found')}}" subName="404" />
+                                <livewire:child-drop-side-bar-comp anchor="{{route('blank')}}" subName="Blank" />
+                            </ul>
+                        </template>
+                    </li>
                 </ul>
                 <div class="px-6 my-6">
                     <button
